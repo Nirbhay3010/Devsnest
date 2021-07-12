@@ -1,0 +1,37 @@
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -100px;
+    margin-left: -200px;
+    border-radius: 2px;
+      box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+      overflow: hidden;
+    background: #fff;
+    color: #333;
+  }
+h1,h6{
+    padding-top: 50px;
+    text-align:center;
+}
+  
+  .box{
+      width: 20px;
+      height: 20px;
+      background-color: #ff1601;
+      box-sizing: border-box;
+      border: 1px solid #b91604;
+      cursor: pointer;
+  }
+  
+  #container{
+      display: flex;
+      flex-wrap: wrap;
+  }
+  
+  .switch {
+      background-color: #fff;
+      border: none;
+  }
