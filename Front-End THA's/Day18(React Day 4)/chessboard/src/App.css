@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.App {
+  height: 100vh;
+  text-align: center;
+  margin-top: 20%;
+}
+.chessBoard {
+  width: 180px;
+  height: 180px;
+  border: 10px solid black;
+  margin: 5px auto;
+}
