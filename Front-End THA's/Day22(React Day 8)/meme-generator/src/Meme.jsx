@@ -3,24 +3,23 @@ import { useState } from "react";
 const Meme = ({ meme, setMeme }) => {
   const [form, setform] = useState({
     template_id: meme.id,
+    username: process.env.REACT_APP_USERNAME,
+    password: process.env.REACT_APP_PASSWORD,
     boxes: [],
   });
   const [image, setImage] = useState(meme.url);
-  let formData = new FormData();
-  formData.append("template_id", meme.id);
-  formData.append("username", process.env.REACT_APP_USERNAME);
-  formData.append("password", process.env.REACT_APP_PASSWORD);
   const handleClick = () => {
-    let url = `https://api.imgflip.com/caption_image`;
-    form.boxes.map((i, index) => {
-      formData.append(`boxes[${index}][text]`, i.text);
+    let url = `https://api.imgflip.com/caption_image?template_id=${form.template_id}&username=${form.username}&password=${form.password}`;
+    form.boxes.map((box, index) => {
+      url+=`&boxes[${index}][text]=${box.text}`;
       return 0;
     });
+    console.log(url);
     fetch(url, {
       method: "POST",
-      body: formData,
     }).then((res) => {
       res.json().then((data) => {
+        console.log(data)
         setImage(data.data.url);
       });
     });
@@ -43,7 +42,7 @@ const Meme = ({ meme, setMeme }) => {
         ))}
       </div>
       <div>
-        <button onClick={handleClick}>Generate Meme</button>
+        <button onClick={handleClick}>Get Meme</button>
         <button onClick={() => setMeme(null)}>Go Back</button>
       </div>
     </div>

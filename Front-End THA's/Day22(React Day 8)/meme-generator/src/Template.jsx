@@ -1,4 +1,4 @@
-const Template = ({ templates, setmeme }) => {
+const Template = ({ templates, setMeme }) => {
     return (
       <div className="templates">
         {templates.map((template) => (
@@ -6,7 +6,7 @@ const Template = ({ templates, setmeme }) => {
             <div
               style={{ backgroundImage: `url(${template.url})` }}
               className="image"
-              onClick={() => setmeme(template)}
+              onClick={() => setMeme(template)}
             ></div>
           </div>
         ))}
