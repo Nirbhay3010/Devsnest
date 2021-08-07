@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+}
+
+input {
+  height: 2rem;
+  font-size: 2rem;
+}
+body {
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #111;
+}
+p {
+  color: white;
+}
